@@ -7,17 +7,19 @@
     <title>KDELTA Mangalasynth | Future of AgriTech AI</title>
     <meta name="description"
         content="Expert-managed Annotation and RLHF for Agriculture, Autonomous Systems, and Retail. High-quality training data for AI models.">
+    
+    <!-- SEO & Social Meta Tags -->
     <meta property="og:title" content="KDELTA Mangalasynth | AgriTech AI Data Services">
     <meta property="og:description"
         content="Expert-managed Annotation and RLHF for Agriculture, Autonomous Systems, and Retail. High-quality training data for AI models.">
-    <meta property="og:image"
-        content="https://images.unsplash.com/photo-1562519819-016930ada31b?q=80&w=2070&auto=format&fit=crop">
+    <meta property="og:image" content="https://kdeltamangalasynth.com/agri-1.webp">
     <meta property="og:url" content="https://kdeltamangalasynth.com">
     <meta property="og:type" content="website">
     <meta name="twitter:card" content="summary_large_image">
-    <!-- Favicon -->
-    <link rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌱</text></svg>">
+    <meta name="theme-color" content="#020617">
+    
+    <!-- Favicon Updated to User Upload -->
+    <link rel="icon" href="kdeltalogo.ico">
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -240,9 +242,10 @@
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
-                <a href="#home" onclick="router('home')" class="flex items-center gap-3 group cursor-pointer">
-                    <div class="bg-gradient-to-br from-cyan-600 to-blue-700 p-2 rounded-xl shadow-lg shadow-cyan-900/50 group-hover:scale-105 transition-transform border border-cyan-400/20">
-                        <i data-lucide="sprout" class="text-white w-6 h-6"></i>
+                <a href="#home" onclick="router('home')" class="flex items-center gap-3 group cursor-pointer" aria-label="Go to Home">
+                    <div class="p-1 rounded-xl shadow-lg shadow-cyan-900/50 group-hover:scale-105 transition-transform border border-cyan-400/20 bg-white/10 backdrop-blur-sm">
+                        <!-- UPDATED LOGO: Uses the uploaded .ico file -->
+                        <img src="kdeltalogo.ico" alt="KDELTA Logo" class="w-8 h-8 object-contain">
                     </div>
                     <div class="flex flex-col">
                         <span class="font-bold text-xl tracking-tight text-white leading-none font-display">KDELTA</span>
@@ -268,7 +271,7 @@
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-                        class="text-slate-400 hover:text-white p-2">
+                        class="text-slate-400 hover:text-white p-2" aria-label="Open Mobile Menu">
                         <i data-lucide="menu" class="w-7 h-7"></i>
                     </button>
                 </div>
@@ -297,9 +300,11 @@
             <!-- Hero Section -->
             <div class="relative h-[650px] lg:h-[750px] flex items-center overflow-hidden">
                 <div class="absolute inset-0 z-0">
+                    <!-- Note: For Hero, we use a stock image or your best work. If you have a 'hero.webp', use that. -->
                     <img src="https://images.unsplash.com/photo-1562519819-016930ada31b?q=80&w=2070&auto=format&fit=crop"
                         alt="Computer Vision Highway Analysis"
                         class="w-full h-full object-cover transform scale-105 animate-float opacity-40 grayscale"
+                        loading="eager"
                         onerror="this.src='https://via.placeholder.com/1920x1080/1f2937/ffffff?text=Hero+Image+Loading+Error'">
                     <div class="absolute inset-0 hero-gradient"></div>
                     <div class="absolute inset-0 cyber-grid"></div>
@@ -706,19 +711,19 @@
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                        <!-- Agriculture -->
+                        <!-- Agriculture: Hover is GIF -->
                         <div
                             class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal">
                             <div class="h-48 overflow-hidden relative">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 pointer-events-none"></div>
                                 <!-- Primary Image (Field View) -->
-                                <img src="agri-1.jfif" 
+                                <img src="agri-1.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 group-hover:opacity-0"
                                     loading="lazy" alt="Agri Field">
-                                <!-- Secondary Image (Drone View) -->
-                                <img src="agri-2.jfif" 
+                                <!-- Secondary Image (Drone View / GIF) -->
+                                <img src="agri-2.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
-                                    loading="lazy" alt="Agri Drone">
+                                    loading="lazy" alt="Agri Drone GIF">
                             </div>
                             <div class="p-6 relative">
                                 <!-- New Badge -->
@@ -740,15 +745,15 @@
                             </div>
                         </div>
 
-                        <!-- Medical -->
+                        <!-- Medical: Hover is WebP -->
                         <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 100ms;">
                             <div class="h-48 overflow-hidden relative">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 pointer-events-none"></div>
-                                <img src="med-1.jfif" 
+                                <img src="med-1.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 group-hover:opacity-0"
                                     loading="lazy" alt="Medical Scan">
-                                <img src="med-2.jfif" 
+                                <img src="med-2.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
                                     loading="lazy" alt="Microscopy">
                             </div>
@@ -763,17 +768,17 @@
                             </div>
                         </div>
 
-                        <!-- Sports -->
+                        <!-- Sports: Hover is GIF -->
                         <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 200ms;">
                             <div class="h-48 overflow-hidden relative">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 pointer-events-none"></div>
-                                <img src="sport-1.jfif" 
+                                <img src="sport-1.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 group-hover:opacity-0"
                                     loading="lazy" alt="Sports Field">
-                                <img src="sport-2.jfif" 
+                                <img src="sport-2.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
-                                    loading="lazy" alt="Sports Action">
+                                    loading="lazy" alt="Sports Action GIF">
                             </div>
                             <div class="p-6">
                                 <h3
@@ -786,15 +791,15 @@
                             </div>
                         </div>
 
-                        <!-- Retail -->
+                        <!-- Retail: Hover is WebP -->
                         <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 300ms;">
                             <div class="h-48 overflow-hidden relative">
                                 <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10 pointer-events-none"></div>
-                                <img src="retail-1.jfif" 
+                                <img src="retail-1.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-100 group-hover:opacity-0"
                                     loading="lazy" alt="Retail Aisle">
-                                <img src="retail-2.jfif" 
+                                <img src="retail-2.webp" 
                                     class="absolute inset-0 w-full h-full object-cover transition-opacity duration-700 opacity-0 group-hover:opacity-100"
                                     loading="lazy" alt="Fashion Rack">
                             </div>
@@ -870,8 +875,9 @@
                             <div class="grid grid-cols-2 gap-4">
                                 <!-- Divyesh Kothari (KDELTA) -->
                                 <div onclick="openModal('contact-modal-divyesh')" class="relative rounded-2xl overflow-hidden shadow-lg group bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-colors cursor-pointer">
-                                    <img src="1559869448082.jfif"
+                                    <img src="divyesh.webp"
                                         class="w-full h-48 object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-700"
+                                        loading="lazy"
                                         alt="Divyesh Kothari">
                                     <div
                                         class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent p-4">
@@ -886,8 +892,9 @@
                                 <!-- Anandkumar Ajudiya (Array Aus) -->
                                 <div onclick="openModal('contact-modal-anand')" class="relative rounded-2xl overflow-hidden shadow-lg group bg-slate-800 border border-slate-700 hover:border-green-500/50 transition-colors cursor-pointer">
                                     <!-- Validated Partner Image Placeholder -->
-                                    <img src="1537756887805.jfif"
+                                    <img src="anand.webp"
                                         class="w-full h-48 object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-700"
+                                        loading="lazy"
                                         alt="Anandkumar Ajudiya">
                                     <div
                                         class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent p-4">
@@ -1112,7 +1119,7 @@
             
             <div class="text-center mb-6">
                  <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-cyan-500 shadow-lg mb-4">
-                    <img src="1559869448082.jfif" class="w-full h-full object-cover">
+                    <img src="divyesh.webp" class="w-full h-full object-cover">
                  </div>
                  <h3 class="text-2xl font-bold font-display text-white">Divyesh Kothari</h3>
                  <p class="text-cyan-400 text-sm font-bold uppercase tracking-wide">Founder & Tech Lead</p>
@@ -1158,7 +1165,7 @@
             
             <div class="text-center mb-6">
                  <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-green-500 shadow-lg mb-4">
-                    <img src="1537756887805.jfif" class="w-full h-full object-cover">
+                    <img src="anand.webp" class="w-full h-full object-cover">
                  </div>
                  <h3 class="text-2xl font-bold font-display text-white">Anandkumar Ajudiya</h3>
                  <p class="text-green-400 text-sm font-bold uppercase tracking-wide">Agronomist & Partner</p>
