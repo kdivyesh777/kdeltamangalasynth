@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KDELTA Mangalasynth | AgriTech AI Data Services</title>
+    <title>KDELTA Mangalasynth | Future of AgriTech AI</title>
     <meta name="description"
         content="Expert-managed Annotation and RLHF for Agriculture, Autonomous Systems, and Retail. High-quality training data for AI models.">
     <meta property="og:title" content="KDELTA Mangalasynth | AgriTech AI Data Services">
@@ -21,6 +21,30 @@
 
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        cyan: {
+                            400: '#22d3ee',
+                            500: '#06b6d4',
+                            600: '#0891b2',
+                            900: '#164e63',
+                        },
+                        slate: {
+                            850: '#151e2e',
+                            950: '#020617',
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        display: ['Space Grotesk', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
     <!-- Icons -->
     <script src="https://unpkg.com/lucide@latest"></script>
     <!-- Fonts -->
@@ -29,15 +53,23 @@
 
         body {
             font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Slate-950 */
+            color: #e2e8f0; /* Slate-200 */
         }
 
-        h1,
-        h2,
-        h3,
-        h4,
-        h5,
-        h6 {
+        h1, h2, h3, h4, h5, h6 {
             font-family: 'Space Grotesk', sans-serif;
+        }
+
+        /* Cyber Grid Background */
+        .cyber-grid {
+            background-size: 50px 50px;
+            background-image: 
+                linear-gradient(to right, rgba(6, 182, 212, 0.05) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(6, 182, 212, 0.05) 1px, transparent 1px);
+            mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            -webkit-mask-image: radial-gradient(circle at center, black 40%, transparent 100%);
+            pointer-events: none;
         }
 
         /* Smooth Page Transitions */
@@ -56,89 +88,80 @@
         }
 
         @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
         /* Modern Hero Gradient */
         .hero-gradient {
-            background: linear-gradient(135deg, rgba(17, 24, 39, 0.95) 0%, rgba(30, 27, 75, 0.85) 50%, rgba(49, 46, 129, 0.4) 100%);
+            background: radial-gradient(circle at center, rgba(6, 182, 212, 0.15) 0%, rgba(2, 6, 23, 0.8) 70%, rgba(2, 6, 23, 1) 100%);
         }
 
-        /* Glassmorphism Card */
+        /* Glassmorphism Card (Dark) */
         .glass-card {
-            background: rgba(255, 255, 255, 0.7);
+            background: rgba(30, 41, 59, 0.4);
             backdrop-filter: blur(12px);
             -webkit-backdrop-filter: blur(12px);
-            border: 1px solid rgba(255, 255, 255, 0.5);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .glass-card:hover {
+            border-color: rgba(34, 211, 238, 0.4); /* Cyan glow */
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.15);
+            transform: translateY(-5px);
         }
 
         /* Custom Image Styling */
         .dashboard-img {
-            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            box-shadow: 0 0 30px rgba(6, 182, 212, 0.1);
             border-radius: 1rem;
             border: 1px solid rgba(255, 255, 255, 0.1);
             width: 100%;
             height: 350px;
             object-fit: cover;
-            background-color: #1f2937;
-            transition: transform 0.5s ease;
-        }
-
-        .dashboard-img:hover {
-            transform: scale(1.02);
+            background-color: #0f172a;
         }
 
         /* Modal Styles */
         .legal-modal {
             transition: opacity 0.3s ease, visibility 0.3s ease;
         }
-
-        .legal-modal.hidden-modal {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
-        .legal-modal.visible-modal {
-            opacity: 1;
-            visibility: visible;
-            pointer-events: auto;
-        }
+        .legal-modal.hidden-modal { opacity: 0; visibility: hidden; pointer-events: none; }
+        .legal-modal.visible-modal { opacity: 1; visibility: visible; pointer-events: auto; }
 
         /* Tab Animations */
         .tab-content {
             display: none;
             animation: fadeTab 0.4s ease-in-out forwards;
         }
-
-        .tab-content.active-tab {
-            display: flex;
-        }
+        .tab-content.active-tab { display: flex; }
 
         @keyframes fadeTab {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
+        .tab-btn {
+            position: relative;
+            color: #94a3b8;
+        }
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 2px;
+            background: #22d3ee;
+            transition: width 0.3s ease;
+        }
+        .tab-btn:hover { color: #e2e8f0; }
         .tab-btn.active {
-            color: #4f46e5;
-            /* Indigo-600 */
-            border-bottom: 2px solid #4f46e5;
+            color: #22d3ee; /* Cyan-400 */
+        }
+        .tab-btn.active::after {
+            width: 100%;
         }
 
         /* Scroll Animations */
@@ -147,69 +170,72 @@
             transform: translateY(30px);
             transition: all 0.8s ease-out;
         }
-
-        .reveal.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
+        .reveal.active { opacity: 1; transform: translateY(0); }
 
         /* Floating Animation */
         @keyframes float {
-            0% {
-                transform: translateY(0px);
-            }
-
-            50% {
-                transform: translateY(-10px);
-            }
-
-            100% {
-                transform: translateY(0px);
-            }
+            0% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+            100% { transform: translateY(0px); }
         }
-
-        .animate-float {
-            animation: float 6s ease-in-out infinite;
-        }
+        .animate-float { animation: float 6s ease-in-out infinite; }
 
         /* Text Glow */
         .text-glow {
-            text-shadow: 0 0 20px rgba(79, 70, 229, 0.5);
+            text-shadow: 0 0 30px rgba(34, 211, 238, 0.6);
+        }
+        
+        /* Neon Button */
+        .btn-neon {
+            background: linear-gradient(90deg, #0891b2 0%, #0f766e 100%);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        .btn-neon::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: linear-gradient(90deg, #06b6d4 0%, #14b8a6 100%);
+            opacity: 0;
+            z-index: -1;
+            transition: opacity 0.3s ease;
+        }
+        .btn-neon:hover::before { opacity: 1; }
+        .btn-neon:hover {
+            box-shadow: 0 0 20px rgba(34, 211, 238, 0.4);
         }
     </style>
 </head>
 
-<body
-    class="bg-slate-50 text-slate-800 antialiased flex flex-col min-h-screen selection:bg-indigo-100 selection:text-indigo-900">
+<body class="antialiased flex flex-col min-h-screen selection:bg-cyan-500/30 selection:text-cyan-200">
 
     <!-- Navigation -->
-    <nav class="fixed w-full bg-white/80 backdrop-blur-md border-b border-slate-200 z-50 transition-all shadow-sm">
+    <nav class="fixed w-full bg-slate-950/80 backdrop-blur-md border-b border-slate-800 z-50 transition-all shadow-lg shadow-black/20">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between h-20 items-center">
                 <!-- Logo -->
                 <a href="#home" onclick="router('home')" class="flex items-center gap-3 group cursor-pointer">
-                    <div
-                        class="bg-indigo-700 p-2 rounded-xl shadow-lg shadow-indigo-200 group-hover:scale-105 transition-transform">
+                    <div class="bg-gradient-to-br from-cyan-600 to-blue-700 p-2 rounded-xl shadow-lg shadow-cyan-900/50 group-hover:scale-105 transition-transform border border-cyan-400/20">
                         <i data-lucide="sprout" class="text-white w-6 h-6"></i>
                     </div>
                     <div class="flex flex-col">
-                        <span class="font-bold text-xl tracking-tight text-slate-900 leading-none">KDELTA</span>
-                        <span class="text-xs text-indigo-700 font-bold uppercase tracking-widest">Mangalasynth</span>
+                        <span class="font-bold text-xl tracking-tight text-white leading-none font-display">KDELTA</span>
+                        <span class="text-xs text-cyan-400 font-bold uppercase tracking-[0.2em]">Mangalasynth</span>
                     </div>
                 </a>
 
                 <!-- Desktop Menu -->
                 <div class="hidden md:flex space-x-8 items-center">
                     <button onclick="router('home')"
-                        class="nav-link text-slate-600 hover:text-indigo-700 font-medium transition text-sm uppercase tracking-wide">Overview</button>
+                        class="nav-link text-slate-400 hover:text-cyan-400 font-medium transition text-sm uppercase tracking-wide">Overview</button>
                     <button onclick="router('services')"
-                        class="nav-link text-slate-600 hover:text-indigo-700 font-medium transition text-sm uppercase tracking-wide">Capabilities</button>
+                        class="nav-link text-slate-400 hover:text-cyan-400 font-medium transition text-sm uppercase tracking-wide">Capabilities</button>
                     <button onclick="router('about')"
-                        class="nav-link text-slate-600 hover:text-indigo-700 font-medium transition text-sm uppercase tracking-wide">Case
-                        Studies</button>
+                        class="nav-link text-slate-400 hover:text-cyan-400 font-medium transition text-sm uppercase tracking-wide">Case Studies</button>
                     <button onclick="router('contact')"
-                        class="px-6 py-2.5 rounded-full bg-indigo-700 text-white font-bold hover:bg-indigo-800 transition shadow-lg hover:shadow-indigo-500/30 transform hover:-translate-y-0.5 flex items-center gap-2">
-                        <span>Get Started</span>
+                        class="px-6 py-2.5 rounded-full btn-neon text-white font-bold transition shadow-lg transform hover:-translate-y-0.5 flex items-center gap-2 border border-white/10">
+                        <span>Initiate Protocol</span>
                         <i data-lucide="arrow-right" class="w-4 h-4"></i>
                     </button>
                 </div>
@@ -217,25 +243,23 @@
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center">
                     <button onclick="document.getElementById('mobile-menu').classList.toggle('hidden')"
-                        class="text-slate-600 p-2">
+                        class="text-slate-400 hover:text-white p-2">
                         <i data-lucide="menu" class="w-7 h-7"></i>
                     </button>
                 </div>
             </div>
         </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="hidden md:hidden bg-white border-b border-slate-200 absolute w-full shadow-xl">
+        <div id="mobile-menu" class="hidden md:hidden bg-slate-900 border-b border-slate-800 absolute w-full shadow-2xl">
             <div class="px-4 pt-2 pb-6 space-y-2">
                 <button onclick="router('home'); toggleMobile()"
-                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Overview</button>
+                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Overview</button>
                 <button onclick="router('services'); toggleMobile()"
-                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Capabilities</button>
+                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Capabilities</button>
                 <button onclick="router('about'); toggleMobile()"
-                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-600 hover:bg-slate-50 rounded-lg">Case
-                    Studies</button>
+                    class="block w-full text-left px-4 py-3 text-base font-medium text-slate-300 hover:bg-slate-800 rounded-lg">Case Studies</button>
                 <button onclick="router('contact'); toggleMobile()"
-                    class="block w-full text-left px-4 py-3 text-base font-bold text-indigo-700 hover:bg-indigo-50 rounded-lg">Get
-                    Started</button>
+                    class="block w-full text-left px-4 py-3 text-base font-bold text-cyan-400 hover:bg-slate-800 rounded-lg">Get Started</button>
             </div>
         </div>
     </nav>
@@ -250,36 +274,37 @@
                 <div class="absolute inset-0 z-0">
                     <img src="https://images.unsplash.com/photo-1562519819-016930ada31b?q=80&w=2070&auto=format&fit=crop"
                         alt="Computer Vision Highway Analysis"
-                        class="w-full h-full object-cover transform scale-105 animate-float"
+                        class="w-full h-full object-cover transform scale-105 animate-float opacity-40 grayscale"
                         onerror="this.src='https://via.placeholder.com/1920x1080/1f2937/ffffff?text=Hero+Image+Loading+Error'">
                     <div class="absolute inset-0 hero-gradient"></div>
+                    <div class="absolute inset-0 cyber-grid"></div>
                 </div>
 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 w-full">
                     <div class="lg:w-3/4">
                         <div
-                            class="inline-flex items-center px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md text-white border border-white/20 text-sm font-semibold mb-8">
-                            <span class="flex h-2 w-2 bg-green-400 rounded-full mr-2 animate-pulse"></span>
-                            <span class="tracking-wide">Specialized in CV & NLP Annotation</span>
+                            class="inline-flex items-center px-4 py-1.5 rounded-full bg-cyan-950/30 backdrop-blur-md text-cyan-300 border border-cyan-500/30 text-xs font-bold uppercase tracking-widest mb-8 shadow-[0_0_15px_rgba(6,182,212,0.3)]">
+                            <span class="flex h-2 w-2 bg-green-400 rounded-full mr-3 animate-pulse shadow-[0_0_10px_#4ade80]"></span>
+                            <span>Expert Agronomy & AI Data Services</span>
                         </div>
                         <h1
-                            class="text-5xl lg:text-7xl font-bold text-white tracking-tight mb-8 leading-[1.1] drop-shadow-lg">
-                            We Turn Complex Data Into <br>
+                            class="text-5xl lg:text-7xl font-bold text-white tracking-tight mb-8 leading-[1.1] drop-shadow-2xl">
+                            Turn Raw Data Into <br>
                             <span
-                                class="text-transparent bg-clip-text bg-gradient-to-r from-green-400 via-blue-500 to-purple-600 text-glow">Intelligent
-                                Models</span>.
+                                class="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-500 text-glow">Intelligent
+                                Reality</span>.
                         </h1>
-                        <p class="text-xl text-slate-200 mb-10 leading-relaxed max-w-2xl drop-shadow-md">
+                        <p class="text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl drop-shadow-md border-l-2 border-cyan-500/50 pl-6">
                             Expert-managed <strong>Annotation</strong> and <strong>RLHF</strong> for Agriculture,
                             Autonomous Systems, and Retail. We deliver pixel-perfect datasets for high-stakes AI.
                         </p>
                         <div class="flex flex-col sm:flex-row gap-4">
                             <button onclick="router('services')"
-                                class="px-8 py-4 text-base font-bold rounded-xl text-white bg-gradient-to-r from-indigo-600 to-violet-600 hover:from-indigo-700 hover:to-violet-700 transition shadow-xl shadow-indigo-500/30 transform hover:-translate-y-1 flex items-center justify-center gap-2 ring-1 ring-white/20">
-                                View Capabilities <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                                class="px-8 py-4 text-base font-bold rounded-xl text-white btn-neon shadow-xl transform hover:-translate-y-1 flex items-center justify-center gap-2 ring-1 ring-white/10">
+                                View Capabilities <i data-lucide="cpu" class="w-4 h-4"></i>
                             </button>
                             <button onclick="router('about')"
-                                class="px-8 py-4 text-base font-bold rounded-xl text-white border border-white/30 hover:bg-white/10 backdrop-blur-sm transition hover:border-white/50">
+                                class="px-8 py-4 text-base font-bold rounded-xl text-slate-200 border border-slate-700 hover:bg-slate-800/50 backdrop-blur-sm transition hover:border-cyan-500/50 hover:text-white">
                                 Why Choose Us
                             </button>
                         </div>
@@ -288,65 +313,63 @@
             </div>
 
             <!-- Interactive Capabilities Section (Tabbed) -->
-            <section class="py-24 bg-slate-900 text-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <section class="py-24 bg-slate-900 text-white relative">
+                <!-- Decorative background elements -->
+                <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-900 to-transparent"></div>
+                
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 
                     <!-- Tabs Navigation -->
                     <div
-                        class="flex flex-wrap justify-center gap-8 border-b border-slate-700 mb-16 text-sm lg:text-base font-medium">
+                        class="flex flex-wrap justify-center gap-8 border-b border-slate-800 mb-16 text-sm lg:text-base font-medium font-display tracking-wide">
                         <button onclick="switchTab('text')" id="tab-text"
-                            class="tab-btn active pb-4 hover:text-indigo-400 transition">Text Annotation</button>
+                            class="tab-btn active pb-4 transition">Text Analysis</button>
                         <button onclick="switchTab('audio')" id="tab-audio"
-                            class="tab-btn pb-4 hover:text-indigo-400 transition">Audio Annotation</button>
+                            class="tab-btn pb-4 transition">Audio Processing</button>
                         <button onclick="switchTab('image')" id="tab-image"
-                            class="tab-btn pb-4 hover:text-indigo-400 transition">Image Annotation</button>
+                            class="tab-btn pb-4 transition">Image Vision</button>
                         <button onclick="switchTab('video')" id="tab-video"
-                            class="tab-btn pb-4 hover:text-indigo-400 transition">Video Annotation</button>
+                            class="tab-btn pb-4 transition">Video Temporal</button>
                         <button onclick="switchTab('multi')" id="tab-multi"
-                            class="tab-btn pb-4 hover:text-indigo-400 transition text-indigo-400">Multimodal
-                            Annotation</button>
+                            class="tab-btn pb-4 transition text-cyan-400 drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]">Multimodal Fusion</button>
                     </div>
 
                     <!-- 1. TEXT ANNOTATION TAB -->
                     <div id="content-text" class="tab-content active-tab flex-col lg:flex-row items-center gap-16">
                         <div class="lg:w-1/2">
-                            <h2 class="text-4xl font-bold mb-6">Text Annotation</h2>
-                            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            <h2 class="text-4xl font-bold mb-6 text-white font-display">Text Annotation</h2>
+                            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                                 Text is the foundation of NLP. Harness our global crowd for reliable text annotation in
                                 235+ languages. We ensure your models understand natural language with high accuracy.
                             </p>
                             <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="message-square"
-                                            class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="message-square" class="w-6 h-6 text-cyan-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Sentiment Annotation</h4>
-                                        <p class="text-slate-400 text-sm">Assess attitudes and emotions to moderate
-                                            content and improve safety.</p>
+                                        <h4 class="font-bold text-white mb-1">Sentiment Annotation</h4>
+                                        <p class="text-slate-400 text-sm">Assess attitudes and emotions to moderate content and improve safety.</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="target" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="target" class="w-6 h-6 text-cyan-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Intent Annotation</h4>
-                                        <p class="text-slate-400 text-sm">Categorize query intent to route requests in
-                                            chatbots and search engines.</p>
+                                        <h4 class="font-bold text-white mb-1">Intent Annotation</h4>
+                                        <p class="text-slate-400 text-sm">Categorize query intent to route requests in chatbots.</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="tag" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="tag" class="w-6 h-6 text-cyan-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Named Entity Annotation (NER)</h4>
-                                        <p class="text-slate-400 text-sm">Detect critical entities (names, locations,
-                                            dates) in large datasets.</p>
+                                        <h4 class="font-bold text-white mb-1">Named Entity (NER)</h4>
+                                        <p class="text-slate-400 text-sm">Detect critical entities (names, locations) in datasets.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="lg:w-1/2 w-full">
-                            <!-- Use Image instead of CSS Mock -->
+                        <div class="lg:w-1/2 w-full relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                             <img src="https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop"
-                                alt="Text Annotation Interface" loading="lazy" class="dashboard-img"
+                                alt="Text Annotation Interface" loading="lazy" class="dashboard-img relative rounded-2xl"
                                 onerror="this.src='https://via.placeholder.com/800x600/1f2937/ffffff?text=Text+Annotation+Visual'">
                         </div>
                     </div>
@@ -354,36 +377,33 @@
                     <!-- 2. AUDIO ANNOTATION TAB -->
                     <div id="content-audio" class="tab-content flex-col lg:flex-row items-center gap-16">
                         <div class="lg:w-1/2">
-                            <h2 class="text-4xl font-bold mb-6">Audio Annotation</h2>
-                            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            <h2 class="text-4xl font-bold mb-6 font-display">Audio Annotation</h2>
+                            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                                 Capture the nuance of dialect and speaker demographics. Our audio annotation includes
-                                transcription and timestamping for speech data, applied to security and emergency use
-                                cases.
+                                transcription and timestamping for speech data.
                             </p>
                             <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="mic" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="mic" class="w-6 h-6 text-purple-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Speech Transcription</h4>
-                                        <p class="text-slate-400 text-sm">Convert spoken language in varied environments
-                                            (multi-speaker, background noise).</p>
+                                        <h4 class="font-bold text-white mb-1">Speech Transcription</h4>
+                                        <p class="text-slate-400 text-sm">Convert spoken language in varied environments.</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="languages" class="w-6 h-6 text-indigo-400"></i>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="languages" class="w-6 h-6 text-purple-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white">Dialect Identification</h4>
-                                        <p class="text-slate-400 text-sm">Annotate audio data to recognize regional
-                                            Indian dialects (Gujarati, Hindi).</p>
+                                        <h4 class="font-bold text-white mb-1">Dialect Identification</h4>
+                                        <p class="text-slate-400 text-sm">Annotate audio data to recognize regional dialects.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="lg:w-1/2 w-full">
-                            <!-- Use Image instead of CSS Mock -->
+                        <div class="lg:w-1/2 w-full relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                             <img src="https://images.unsplash.com/photo-1590602847861-f357a9332bbc?q=80&w=2070&auto=format&fit=crop"
-                                alt="Audio Waveform Interface" loading="lazy" class="dashboard-img"
+                                alt="Audio Waveform Interface" loading="lazy" class="dashboard-img relative rounded-2xl"
                                 onerror="this.src='https://via.placeholder.com/800x600/1f2937/ffffff?text=Audio+Annotation+Visual'">
                         </div>
                     </div>
@@ -391,41 +411,33 @@
                     <!-- 3. IMAGE ANNOTATION TAB -->
                     <div id="content-image" class="tab-content flex-col lg:flex-row items-center gap-16">
                         <div class="lg:w-1/2">
-                            <h2 class="text-4xl font-bold mb-6">Image Annotation</h2>
-                            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            <h2 class="text-4xl font-bold mb-6 font-display">Image Annotation</h2>
+                            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                                 Vital for computer vision. We provide detailed labeling of images to ensure precise and
-                                accurate model training for applications like autonomous driving and retail.
+                                accurate model training for applications like autonomous driving.
                             </p>
                             <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="scan" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="scan" class="w-6 h-6 text-green-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Object Detection</h4>
-                                        <p class="text-slate-400 text-sm">Identify and label objects within images
-                                            (Bounding Box).</p>
+                                        <h4 class="font-bold text-white mb-1">Object Detection</h4>
+                                        <p class="text-slate-400 text-sm">Identify and label objects within images (Bounding Box).</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="user-check" class="w-6 h-6 text-indigo-400"></i>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="user-check" class="w-6 h-6 text-green-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white">Facial Recognition</h4>
-                                        <p class="text-slate-400 text-sm">Annotate facial features (Landmarking) for
-                                            verification.</p>
-                                    </div>
-                                </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="layers" class="w-6 h-6 text-indigo-400"></i></div>
-                                    <div>
-                                        <h4 class="font-bold text-white">Image Classification</h4>
-                                        <p class="text-slate-400 text-sm">Categorize images for e-commerce catalogs.</p>
+                                        <h4 class="font-bold text-white mb-1">Facial Recognition</h4>
+                                        <p class="text-slate-400 text-sm">Annotate facial features (Landmarking) for verification.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="lg:w-1/2 w-full">
+                        <div class="lg:w-1/2 w-full relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-green-600 to-cyan-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                             <img src="https://images.unsplash.com/photo-1615915468538-0fbd857888ca?q=80&w=1968&auto=format&fit=crop"
-                                alt="Vegetable Segmentation" loading="lazy" class="dashboard-img"
+                                alt="Vegetable Segmentation" loading="lazy" class="dashboard-img relative rounded-2xl"
                                 onerror="this.src='https://via.placeholder.com/800x600/1f2937/ffffff?text=Image+Annotation+Visual'">
                         </div>
                     </div>
@@ -433,34 +445,32 @@
                     <!-- 4. VIDEO ANNOTATION TAB -->
                     <div id="content-video" class="tab-content flex-col lg:flex-row items-center gap-16">
                         <div class="lg:w-1/2">
-                            <h2 class="text-4xl font-bold mb-6">Video Annotation</h2>
-                            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
-                                Improve computer vision capabilities for surveillance and autonomous navigation. We
-                                label sequences of frames to train models for temporal analysis.
+                            <h2 class="text-4xl font-bold mb-6 font-display">Video Annotation</h2>
+                            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
+                                Improve computer vision capabilities for surveillance. We label sequences of frames to train models for temporal analysis.
                             </p>
                             <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="video" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="video" class="w-6 h-6 text-blue-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Object Tracking</h4>
-                                        <p class="text-slate-400 text-sm">Annotate objects across multiple frames for
-                                            dynamic scene analysis.</p>
+                                        <h4 class="font-bold text-white mb-1">Object Tracking</h4>
+                                        <p class="text-slate-400 text-sm">Annotate objects across multiple frames for dynamic analysis.</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="activity" class="w-6 h-6 text-indigo-400"></i>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="activity" class="w-6 h-6 text-blue-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white">Action Recognition</h4>
-                                        <p class="text-slate-400 text-sm">Label actions and activities within videos for
-                                            sports analytics.</p>
+                                        <h4 class="font-bold text-white mb-1">Action Recognition</h4>
+                                        <p class="text-slate-400 text-sm">Label actions and activities within videos.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="lg:w-1/2 w-full">
+                        <div class="lg:w-1/2 w-full relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-2xl blur opacity-25 group-hover:opacity-50 transition duration-1000"></div>
                             <img src="https://images.unsplash.com/photo-1535378437323-9555f3e7f5bb?q=80&w=2070&auto=format&fit=crop"
-                                alt="Traffic Video Analysis" loading="lazy" class="dashboard-img"
+                                alt="Traffic Video Analysis" loading="lazy" class="dashboard-img relative rounded-2xl"
                                 onerror="this.src='https://via.placeholder.com/800x600/1f2937/ffffff?text=Video+Annotation+Visual'">
                         </div>
                     </div>
@@ -469,37 +479,35 @@
                     <div id="content-multi" class="tab-content flex-col lg:flex-row items-center gap-16">
                         <div class="lg:w-1/2">
                             <div
-                                class="inline-block px-3 py-1 bg-indigo-600 rounded-full text-xs font-bold text-white mb-4">
+                                class="inline-block px-3 py-1 bg-gradient-to-r from-cyan-600 to-blue-600 rounded-full text-xs font-bold text-white mb-4 shadow-[0_0_15px_rgba(34,211,238,0.4)]">
                                 SPECIALTY</div>
-                            <h2 class="text-4xl font-bold mb-6">Multimodal Annotation</h2>
-                            <p class="text-slate-300 text-lg mb-8 leading-relaxed">
+                            <h2 class="text-4xl font-bold mb-6 font-display">Multimodal Annotation</h2>
+                            <p class="text-slate-400 text-lg mb-8 leading-relaxed">
                                 Label and categorize data that spans multiple formats (text, images, audio, and video)
                                 within a single dataset. Enable AI models to process complex inputs.
                             </p>
                             <ul class="space-y-6">
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="captions" class="w-6 h-6 text-indigo-400"></i>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="captions" class="w-6 h-6 text-cyan-400"></i>
                                     </div>
                                     <div>
-                                        <h4 class="font-bold text-white">Caption Generation</h4>
-                                        <p class="text-slate-400 text-sm">Pair video/audio with text to automatically
-                                            generate captions.</p>
+                                        <h4 class="font-bold text-white mb-1">Caption Generation</h4>
+                                        <p class="text-slate-400 text-sm">Pair video/audio with text to automatically generate captions.</p>
                                     </div>
                                 </li>
-                                <li class="flex gap-4">
-                                    <div class="mt-1"><i data-lucide="search" class="w-6 h-6 text-indigo-400"></i></div>
+                                <li class="flex gap-4 p-4 glass-card rounded-xl">
+                                    <div class="mt-1"><i data-lucide="search" class="w-6 h-6 text-cyan-400"></i></div>
                                     <div>
-                                        <h4 class="font-bold text-white">Multimodal Search</h4>
-                                        <p class="text-slate-400 text-sm">Enable users to search via image, text, and
-                                            voice for enhanced relevance.</p>
+                                        <h4 class="font-bold text-white mb-1">Multimodal Search</h4>
+                                        <p class="text-slate-400 text-sm">Enable users to search via image, text, and voice.</p>
                                     </div>
                                 </li>
                             </ul>
                         </div>
-                        <div class="lg:w-1/2 w-full">
-                            <!-- Use Image instead of CSS Mock -->
+                        <div class="lg:w-1/2 w-full relative group">
+                            <div class="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-fuchsia-500 rounded-2xl blur opacity-30 group-hover:opacity-60 transition duration-1000"></div>
                             <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop"
-                                alt="Multimodal Dashboard" loading="lazy" class="dashboard-img"
+                                alt="Multimodal Dashboard" loading="lazy" class="dashboard-img relative rounded-2xl"
                                 onerror="this.src='https://via.placeholder.com/800x600/1f2937/ffffff?text=Multimodal+Annotation+Visual'">
                         </div>
                     </div>
@@ -510,107 +518,105 @@
 
         <!-- ================= SOLUTIONS PAGE (Industries) ================= -->
         <div id="services" class="page-section">
-            <div class="py-24 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="py-24 bg-slate-950 relative">
+                <div class="absolute inset-0 cyber-grid opacity-50"></div>
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="text-center mb-16">
-                        <h2 class="text-4xl font-bold text-slate-900">Industry Solutions</h2>
-                        <p class="text-slate-600 mt-4">Specialized annotation workflows for demanding sectors.</p>
+                        <h2 class="text-4xl font-bold text-white font-display">Industry Solutions</h2>
+                        <p class="text-slate-400 mt-4 text-lg">Specialized annotation workflows for demanding sectors.</p>
                     </div>
 
                     <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
                         <!-- Agriculture -->
                         <div
-                            class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition duration-500 group reveal">
+                            class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal">
                             <div class="h-48 overflow-hidden relative">
-                                <div
-                                    class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition z-10">
-                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                                 <img src="https://images.unsplash.com/photo-1625246333195-58197bd47d26?q=80&w=2071&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80"
                                     loading="lazy" alt="Agri"
                                     onerror="this.src='https://via.placeholder.com/400x300?text=Agriculture'">
                             </div>
-                            <div class="p-8">
+                            <div class="p-6 relative">
+                                <!-- New Badge -->
+                                <div class="absolute -top-8 right-6 z-20 bg-slate-900 rounded-full p-1 border border-green-500 shadow-lg shadow-green-900/50">
+                                    <i data-lucide="badge-check" class="text-green-400 w-5 h-5"></i>
+                                </div>
+
                                 <h3
-                                    class="font-bold text-xl text-slate-900 mb-3 group-hover:text-indigo-700 transition">
-                                    Agriculture</h3>
-                                <p class="text-sm text-slate-600 mb-6 leading-relaxed">Crop disease detection, yield
-                                    estimation, and robotic harvesting data.</p>
+                                    class="font-bold text-xl text-white mb-3 group-hover:text-cyan-400 transition font-display">
+                                    Agriculture
+                                </h3>
+                                <p class="text-sm text-slate-400 mb-6 leading-relaxed">
+                                    <strong class="text-green-400">Expert-Verified.</strong> Crop disease detection and yield estimation validated by our in-house Agronomist.
+                                </p>
                                 <span
-                                    class="text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline flex items-center gap-1">Learn
-                                    More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                                    class="text-xs font-bold text-cyan-500 uppercase tracking-wider group-hover:text-cyan-300 flex items-center gap-1">
+                                    View Data Spec <i data-lucide="arrow-right" class="w-3 h-3"></i>
+                                </span>
                             </div>
                         </div>
 
                         <!-- Medical -->
-                        <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition duration-500 group reveal"
+                        <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 100ms;">
                             <div class="h-48 overflow-hidden relative">
-                                <div
-                                    class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition z-10">
-                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                                 <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=2070&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80"
                                     loading="lazy" alt="Medical"
                                     onerror="this.src='https://via.placeholder.com/400x300?text=Medical+AI'">
                             </div>
-                            <div class="p-8">
+                            <div class="p-6">
                                 <h3
-                                    class="font-bold text-xl text-slate-900 mb-3 group-hover:text-indigo-700 transition">
+                                    class="font-bold text-xl text-white mb-3 group-hover:text-cyan-400 transition font-display">
                                     Medical AI</h3>
-                                <p class="text-sm text-slate-600 mb-6 leading-relaxed">X-ray bounding boxes, cancer cell
+                                <p class="text-sm text-slate-400 mb-6 leading-relaxed">X-ray bounding boxes, cancer cell
                                     detection, and dental image analysis.</p>
                                 <span
-                                    class="text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline flex items-center gap-1">Learn
-                                    More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                                    class="text-xs font-bold text-cyan-500 uppercase tracking-wider group-hover:text-cyan-300 flex items-center gap-1">View Data Spec <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                             </div>
                         </div>
 
                         <!-- Sports -->
-                        <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition duration-500 group reveal"
+                        <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 200ms;">
                             <div class="h-48 overflow-hidden relative">
-                                <div
-                                    class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition z-10">
-                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                                 <img src="https://images.unsplash.com/photo-1574629810360-7efbbe4384d4?q=80&w=2070&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80"
                                     loading="lazy" alt="Sports"
                                     onerror="this.src='https://via.placeholder.com/400x300?text=Sports+Analytics'">
                             </div>
-                            <div class="p-8">
+                            <div class="p-6">
                                 <h3
-                                    class="font-bold text-xl text-slate-900 mb-3 group-hover:text-indigo-700 transition">
+                                    class="font-bold text-xl text-white mb-3 group-hover:text-cyan-400 transition font-display">
                                     Sports Analytics</h3>
-                                <p class="text-sm text-slate-600 mb-6 leading-relaxed">Player tracking, ball movement
+                                <p class="text-sm text-slate-400 mb-6 leading-relaxed">Player tracking, ball movement
                                     analysis, and pose estimation.</p>
                                 <span
-                                    class="text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline flex items-center gap-1">Learn
-                                    More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                                    class="text-xs font-bold text-cyan-500 uppercase tracking-wider group-hover:text-cyan-300 flex items-center gap-1">View Data Spec <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                             </div>
                         </div>
 
                         <!-- Retail -->
-                        <div class="glass-card rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:shadow-indigo-500/10 transition duration-500 group reveal"
+                        <div class="glass-card rounded-2xl overflow-hidden shadow-lg hover:shadow-cyan-500/20 transition duration-500 group reveal"
                             style="transition-delay: 300ms;">
                             <div class="h-48 overflow-hidden relative">
-                                <div
-                                    class="absolute inset-0 bg-indigo-900/10 group-hover:bg-transparent transition z-10">
-                                </div>
+                                <div class="absolute inset-0 bg-gradient-to-t from-slate-900 to-transparent z-10"></div>
                                 <img src="https://images.unsplash.com/photo-1578916171728-5666d526475b?q=80&w=1974&auto=format&fit=crop"
-                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700"
+                                    class="w-full h-full object-cover group-hover:scale-110 transition duration-700 opacity-80"
                                     loading="lazy" alt="Retail"
                                     onerror="this.src='https://via.placeholder.com/400x300?text=Retail+AI'">
                             </div>
-                            <div class="p-8">
+                            <div class="p-6">
                                 <h3
-                                    class="font-bold text-xl text-slate-900 mb-3 group-hover:text-indigo-700 transition">
+                                    class="font-bold text-xl text-white mb-3 group-hover:text-cyan-400 transition font-display">
                                     Retail & Fashion</h3>
-                                <p class="text-sm text-slate-600 mb-6 leading-relaxed">Shelf monitoring, inventory
+                                <p class="text-sm text-slate-400 mb-6 leading-relaxed">Shelf monitoring, inventory
                                     counts, and fashion item segmentation.</p>
                                 <span
-                                    class="text-xs font-bold text-indigo-600 uppercase tracking-wider group-hover:underline flex items-center gap-1">Learn
-                                    More <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
+                                    class="text-xs font-bold text-cyan-500 uppercase tracking-wider group-hover:text-cyan-300 flex items-center gap-1">View Data Spec <i data-lucide="arrow-right" class="w-3 h-3"></i></span>
                             </div>
                         </div>
                     </div>
@@ -618,28 +624,31 @@
                     <!-- Engagement Models -->
                     <div class="mt-24">
                         <div class="text-center mb-12">
-                            <h2 class="text-3xl font-bold text-slate-900">Engagement Models</h2>
+                            <h2 class="text-3xl font-bold text-white font-display">Engagement Models</h2>
                         </div>
                         <div class="grid md:grid-cols-4 gap-6">
                             <div
-                                class="p-6 bg-white border border-slate-200 rounded-xl text-center hover:border-indigo-500 transition cursor-default">
-                                <div class="font-bold text-lg mb-2">Project Based</div>
-                                <p class="text-sm text-slate-500">Fixed cost for defined scope.</p>
+                                class="p-6 glass-card rounded-xl text-center hover:border-cyan-500/50 transition cursor-default">
+                                <div class="font-bold text-lg mb-2 text-white">Project Based</div>
+                                <p class="text-sm text-slate-400">Fixed cost for defined scope.</p>
                             </div>
                             <div
-                                class="p-6 bg-white border border-slate-200 rounded-xl text-center hover:border-indigo-500 transition cursor-default">
-                                <div class="font-bold text-lg mb-2">Hourly Model</div>
-                                <p class="text-sm text-slate-500">Pay-as-you-go flexibility.</p>
+                                class="p-6 glass-card rounded-xl text-center hover:border-cyan-500/50 transition cursor-default">
+                                <div class="font-bold text-lg mb-2 text-white">Hourly Model</div>
+                                <p class="text-sm text-slate-400">Pay-as-you-go flexibility.</p>
                             </div>
                             <div
-                                class="p-6 bg-white border border-slate-200 rounded-xl text-center hover:border-indigo-500 transition cursor-default">
-                                <div class="font-bold text-lg mb-2">Pay Per Item</div>
-                                <p class="text-sm text-slate-500">Transparent unit pricing.</p>
+                                class="p-6 glass-card rounded-xl text-center hover:border-cyan-500/50 transition cursor-default">
+                                <div class="font-bold text-lg mb-2 text-white">Pay Per Item</div>
+                                <p class="text-sm text-slate-400">Transparent unit pricing.</p>
                             </div>
                             <div
-                                class="p-6 bg-indigo-600 text-white rounded-xl text-center shadow-lg hover:bg-indigo-700 transition">
-                                <div class="font-bold text-lg mb-2">Dedicated Team</div>
-                                <p class="text-sm text-indigo-100">Full-time annotators for you.</p>
+                                class="p-6 bg-gradient-to-br from-cyan-600 to-blue-700 text-white rounded-xl text-center shadow-lg shadow-cyan-900/50 relative overflow-hidden group">
+                                <div class="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition duration-500"></div>
+                                <div class="relative z-10">
+                                    <div class="font-bold text-lg mb-2">Dedicated Team</div>
+                                    <p class="text-sm text-cyan-100">Full-time annotators for you.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -650,54 +659,90 @@
 
         <!-- ================= ABOUT PAGE ================= -->
         <div id="about" class="page-section">
-            <div class="py-24 bg-white">
-                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="py-24 bg-slate-900 relative">
+                 <!-- Gradient Orb -->
+                 <div class="absolute top-40 right-0 w-[500px] h-[500px] bg-purple-600/10 rounded-full blur-[120px] pointer-events-none"></div>
+
+                <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                     <div class="lg:flex lg:gap-16">
+                        <!-- REPLACEMENT: Leadership & Partnership Section -->
                         <div class="lg:w-1/2 mb-10 lg:mb-0 sticky top-24">
-                            <div class="relative rounded-3xl overflow-hidden shadow-2xl">
-                                <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop"
-                                    class="w-full object-cover grayscale hover:grayscale-0 transition duration-700"
-                                    loading="lazy" alt="Farmer"
-                                    onerror="this.src='https://via.placeholder.com/600x800?text=Founder+Image'">
-                                <div
-                                    class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/90 to-transparent p-8">
-                                    <div class="text-white font-bold text-xl">Divyesh Kothari</div>
-                                    <div class="text-indigo-300">Founder & Agri Specialist</div>
+                            <div class="mb-6">
+                                <span
+                                    class="px-3 py-1 bg-green-900/40 text-green-300 border border-green-500/30 rounded-full text-xs font-bold uppercase tracking-wider mb-2 inline-block shadow-[0_0_10px_rgba(74,222,128,0.2)]">Strategic
+                                    Alliance</span>
+                                <h3 class="text-3xl font-bold text-white font-display">Global Intelligence.</h3>
+                                <p class="text-slate-400 text-sm mt-2">A strategic alliance between
+                                    <strong class="text-cyan-400">KDELTA</strong> (India) and <strong class="text-green-400">Array Aus</strong> (Australia) to
+                                    deliver botanically accurate AI data.
+                                </p>
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-4">
+                                <!-- Divyesh Kothari (KDELTA) -->
+                                <div onclick="openModal('contact-modal-divyesh')" class="relative rounded-2xl overflow-hidden shadow-lg group bg-slate-800 border border-slate-700 hover:border-cyan-500/50 transition-colors cursor-pointer">
+                                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop"
+                                        class="w-full h-48 object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-700"
+                                        alt="Divyesh Kothari">
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent p-4">
+                                        <div class="text-white font-bold text-sm leading-tight">Divyesh Kothari</div>
+                                        <div
+                                            class="text-cyan-400 text-[10px] uppercase font-bold tracking-wide mt-1">
+                                            KDELTA Mangalasynth</div>
+                                        <div class="text-slate-500 text-xs mt-0.5">Founder & Tech Lead</div>
+                                    </div>
+                                </div>
+
+                                <!-- Anandkumar Ajudiya (Array Aus) -->
+                                <div onclick="openModal('contact-modal-anand')" class="relative rounded-2xl overflow-hidden shadow-lg group bg-slate-800 border border-slate-700 hover:border-green-500/50 transition-colors cursor-pointer">
+                                    <!-- Validated Partner Image Placeholder -->
+                                    <img src="https://images.unsplash.com/photo-1595435934249-fd96316cd29a?q=80&w=1974&auto=format&fit=crop"
+                                        class="w-full h-48 object-cover opacity-60 grayscale group-hover:grayscale-0 group-hover:opacity-100 transition duration-700"
+                                        alt="Anandkumar Ajudiya">
+                                    <div
+                                        class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-slate-950 via-slate-900/90 to-transparent p-4">
+                                        <div class="text-white font-bold text-sm leading-tight">Anandkumar Ajudiya</div>
+                                        <div class="text-green-400 text-[10px] uppercase font-bold tracking-wide mt-1">
+                                            Array Aus Pty Ltd</div>
+                                        <div class="text-slate-500 text-xs mt-0.5">Agronomist & Partner</div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="mt-8 bg-slate-50 p-6 rounded-2xl border border-slate-100">
-                                <h4 class="font-bold text-slate-900 mb-4">Tools We Use</h4>
+
+                            <!-- Tech Stack Badge -->
+                            <div class="mt-6 bg-slate-800/50 p-4 rounded-xl border border-slate-700 backdrop-blur-sm">
+                                <h4 class="font-bold text-slate-300 mb-3 text-sm flex items-center gap-2"><i data-lucide="layers" class="w-4 h-4"></i> Tech Stack</h4>
                                 <div class="flex flex-wrap gap-2">
                                     <span
-                                        class="px-3 py-1 bg-white border border-slate-200 rounded text-sm font-medium">Roboflow</span>
+                                        class="px-2 py-1 bg-slate-900 border border-slate-600 text-slate-300 rounded text-xs font-mono">Roboflow</span>
                                     <span
-                                        class="px-3 py-1 bg-white border border-slate-200 rounded text-sm font-medium">CVAT</span>
+                                        class="px-2 py-1 bg-slate-900 border border-slate-600 text-slate-300 rounded text-xs font-mono">CVAT</span>
                                     <span
-                                        class="px-3 py-1 bg-white border border-slate-200 rounded text-sm font-medium">LabelImg</span>
-                                    <span
-                                        class="px-3 py-1 bg-white border border-slate-200 rounded text-sm font-medium">Doccano</span>
+                                        class="px-2 py-1 bg-slate-900 border border-slate-600 text-slate-300 rounded text-xs font-mono">QGIS</span>
                                 </div>
                             </div>
                         </div>
+                        
                         <div class="lg:w-1/2">
-                            <span class="text-indigo-600 font-bold uppercase tracking-wider text-sm">Case Studies</span>
-                            <h2 class="text-4xl font-bold text-slate-900 mt-2 mb-8">Delivering Precision.</h2>
+                            <span class="text-cyan-500 font-bold uppercase tracking-wider text-sm">Deployment Success</span>
+                            <h2 class="text-4xl font-bold text-white mt-2 mb-8 font-display">Delivering Precision.</h2>
 
                             <div class="space-y-12">
-                                <div class="relative pl-8 border-l-2 border-indigo-100 group">
+                                <div class="relative pl-8 border-l-2 border-slate-700 group hover:border-cyan-500 transition-colors duration-500">
                                     <div
-                                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-white group-hover:scale-125 transition-transform">
+                                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-cyan-500 group-hover:scale-125 group-hover:bg-cyan-500 transition-all shadow-[0_0_10px_rgba(34,211,238,0.5)]">
                                     </div>
-                                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Cotton Disease Detection</h3>
-                                    <p class="text-slate-600 leading-relaxed mb-4">Annotated 15,000+ images to identify
+                                    <h3 class="text-2xl font-bold text-white mb-3">Cotton Disease Detection</h3>
+                                    <p class="text-slate-400 leading-relaxed mb-4">Annotated 15,000+ images to identify
                                         "Pink Bollworm" with 98% accuracy using polygon segmentation.</p>
                                 </div>
-                                <div class="relative pl-8 border-l-2 border-indigo-100 group">
+                                <div class="relative pl-8 border-l-2 border-slate-700 group hover:border-purple-500 transition-colors duration-500">
                                     <div
-                                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-indigo-600 ring-4 ring-white group-hover:scale-125 transition-transform">
+                                        class="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-slate-900 border-2 border-purple-500 group-hover:scale-125 group-hover:bg-purple-500 transition-all shadow-[0_0_10px_rgba(168,85,247,0.5)]">
                                     </div>
-                                    <h3 class="text-2xl font-bold text-slate-900 mb-3">Vernacular Voice Bot</h3>
-                                    <p class="text-slate-600 leading-relaxed mb-4">Transcribed 50+ hours of Gujarati
+                                    <h3 class="text-2xl font-bold text-white mb-3">Vernacular Voice Bot</h3>
+                                    <p class="text-slate-400 leading-relaxed mb-4">Transcribed 50+ hours of Gujarati
                                         advisory calls to improve chatbot intent recognition for farmers.</p>
                                 </div>
                             </div>
@@ -709,41 +754,84 @@
 
         <!-- ================= CONTACT PAGE ================= -->
         <div id="contact" class="page-section">
-            <div class="py-24 bg-slate-900 text-white min-h-[80vh] flex items-center relative overflow-hidden">
+            <div class="py-24 bg-slate-950 text-white min-h-[80vh] flex items-center relative overflow-hidden">
+                <div class="absolute inset-0 cyber-grid opacity-30"></div>
                 <div
-                    class="absolute top-0 right-0 w-[500px] h-[500px] bg-indigo-600/20 rounded-full blur-[100px] pointer-events-none">
+                    class="absolute top-0 right-0 w-[500px] h-[500px] bg-cyan-600/10 rounded-full blur-[100px] pointer-events-none">
                 </div>
 
                 <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                     <div class="grid lg:grid-cols-2 gap-16">
                         <div>
-                            <h2 class="text-5xl font-bold text-white mb-6">Let's Build.</h2>
+                            <h2 class="text-5xl font-bold text-white mb-6 font-display">Let's Build the Future.</h2>
                             <p class="text-lg text-slate-400 mb-10">Contact us for a pilot project. Stripe-verified and
                                 export-ready.</p>
+                            <!-- REPLACEMENT: Contact Addresses -->
                             <div class="space-y-6">
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="mail" class="text-indigo-400"></i>
-                                    <span>contact@kdeltamangalasynth.com</span>
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 bg-cyan-500/10 p-2 rounded-lg border border-cyan-500/20"><i data-lucide="mail"
+                                            class="text-cyan-400 w-5 h-5"></i></div>
+                                    <div>
+                                        <span
+                                            class="block text-sm text-slate-500 font-medium uppercase tracking-wide">Email</span>
+                                        <span class="text-white hover:text-cyan-400 transition">contact@kdeltamangalasynth.com</span>
+                                    </div>
                                 </div>
-                                <div class="flex items-center gap-4">
-                                    <i data-lucide="map-pin" class="text-indigo-400"></i>
-                                    <span>Lal Park Society, Street No 3, Bolbala Marg, Rajkot 360002, Gujarat,
-                                        India</span>
+
+                                <!-- India Office -->
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 bg-cyan-500/10 p-2 rounded-lg border border-cyan-500/20"><i data-lucide="map-pin"
+                                            class="text-cyan-400 w-5 h-5"></i></div>
+                                    <div>
+                                        <span
+                                            class="block text-sm text-slate-500 font-medium uppercase tracking-wide">India
+                                            (Tech HQ)</span>
+                                        <span class="text-slate-300 text-sm leading-relaxed">
+                                            Lal Park Society, Street No 3, Bolbala Marg,<br>
+                                            Rajkot 360002, Gujarat, India
+                                        </span>
+                                    </div>
+                                </div>
+
+                                <!-- Australia Office -->
+                                <div class="flex items-start gap-4">
+                                    <div class="mt-1 bg-green-500/10 p-2 rounded-lg border border-green-500/20"><i data-lucide="globe"
+                                            class="text-green-400 w-5 h-5"></i></div>
+                                    <div>
+                                        <span
+                                            class="block text-sm text-slate-500 font-medium uppercase tracking-wide">Australia
+                                            (Agronomy)</span>
+                                        <span class="text-slate-300 text-sm leading-relaxed">
+                                            4521 Kennedy Highway,<br>
+                                            Mareeba QLD 4880, Australia
+                                        </span>
+                                        <!-- CORRECTED COMPANY NAME BELOW -->
+                                        <div class="mt-1 text-xs text-green-400 font-medium">Array Aus Pty Ltd</div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="bg-white rounded-3xl p-8 text-slate-900 shadow-2xl">
+                        <div class="glass-card rounded-3xl p-8 text-white shadow-2xl relative">
+                            <div class="absolute inset-0 bg-gradient-to-b from-white/5 to-transparent rounded-3xl pointer-events-none"></div>
                             <form name="contact" method="POST" data-netlify="true">
                                 <div class="space-y-4">
-                                    <input type="text" name="name" placeholder="Name"
-                                        class="w-full border border-slate-200 rounded-xl px-4 py-3" required>
-                                    <input type="email" name="email" placeholder="Email"
-                                        class="w-full border border-slate-200 rounded-xl px-4 py-3" required>
-                                    <textarea name="message" rows="4" placeholder="Project Details"
-                                        class="w-full border border-slate-200 rounded-xl px-4 py-3" required></textarea>
+                                    <div>
+                                        <label class="block text-xs uppercase text-slate-400 font-bold mb-2">Identification</label>
+                                        <input type="text" name="name" placeholder="Full Name"
+                                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase text-slate-400 font-bold mb-2">Communication Link</label>
+                                        <input type="email" name="email" placeholder="Email Address"
+                                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition" required>
+                                    </div>
+                                    <div>
+                                        <label class="block text-xs uppercase text-slate-400 font-bold mb-2">Project Parameters</label>
+                                        <textarea name="message" rows="4" placeholder="Describe your data requirements..."
+                                            class="w-full bg-slate-900/50 border border-slate-700 rounded-xl px-4 py-3 text-white focus:border-cyan-500 focus:outline-none focus:ring-1 focus:ring-cyan-500 transition" required></textarea>
+                                    </div>
                                     <button type="submit"
-                                        class="w-full bg-indigo-700 text-white font-bold py-4 rounded-xl hover:bg-indigo-800 transition shadow-lg">Send
-                                        Inquiry</button>
+                                        class="w-full btn-neon text-white font-bold py-4 rounded-xl shadow-lg mt-4 uppercase tracking-widest text-sm">Transmit Inquiry</button>
                                 </div>
                             </form>
                         </div>
@@ -754,48 +842,127 @@
     </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-slate-200 py-12 mt-auto">
+    <footer class="bg-slate-900 border-t border-slate-800 py-12 mt-auto">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row justify-between items-center gap-8">
             <div class="flex items-center gap-2">
-                <i data-lucide="sprout" class="text-indigo-700 w-6 h-6"></i>
-                <span class="font-bold text-lg text-slate-900">KDELTA<span
-                        class="text-indigo-700">Mangalasynth</span></span>
+                <i data-lucide="sprout" class="text-cyan-500 w-6 h-6"></i>
+                <span class="font-bold text-lg text-white font-display">KDELTA<span
+                        class="text-cyan-500">Mangalasynth</span></span>
             </div>
-            <div class="flex gap-8 text-sm text-slate-600 font-medium">
-                <button onclick="openModal('privacy-modal')" class="hover:text-indigo-700">Privacy Policy</button>
-                <button onclick="openModal('terms-modal')" class="hover:text-indigo-700">Terms & Conditions</button>
-                <button onclick="openModal('refund-modal')" class="hover:text-indigo-700">Refund Policy</button>
+            <div class="flex gap-8 text-sm text-slate-400 font-medium">
+                <button onclick="openModal('privacy-modal')" class="hover:text-cyan-400 transition">Privacy Policy</button>
+                <button onclick="openModal('terms-modal')" class="hover:text-cyan-400 transition">Terms & Conditions</button>
+                <button onclick="openModal('refund-modal')" class="hover:text-cyan-400 transition">Refund Policy</button>
             </div>
-            <div class="text-sm text-slate-400">© 2025 KDELTA Mangalasynth. India.</div>
+            <div class="text-sm text-slate-600">© 2025 KDELTA Mangalasynth. India.</div>
         </div>
     </footer>
 
     <!-- MODALS -->
+    
+    <!-- Custom Contact Modal for Divyesh -->
+    <div id="contact-modal-divyesh"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-md"
+        onclick="if(event.target === this) closeModal('contact-modal-divyesh')">
+        <div class="bg-slate-900 border border-cyan-500/30 rounded-2xl shadow-[0_0_50px_rgba(6,182,212,0.15)] w-full max-w-md p-8 text-white relative">
+            <button onclick="closeModal('contact-modal-divyesh')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            
+            <div class="text-center mb-6">
+                 <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-cyan-500 shadow-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1605000797499-95a51c5269ae?q=80&w=2071&auto=format&fit=crop" class="w-full h-full object-cover">
+                 </div>
+                 <h3 class="text-2xl font-bold font-display text-white">Divyesh Kothari</h3>
+                 <p class="text-cyan-400 text-sm font-bold uppercase tracking-wide">Founder & Tech Lead</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 flex items-start gap-4">
+                    <div class="bg-cyan-500/10 p-2 rounded-lg"><i data-lucide="mail" class="text-cyan-400 w-5 h-5"></i></div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-bold">Email</span>
+                        <a href="mailto:contact@kdeltamangalasynth.com" class="text-white hover:text-cyan-400 break-all">contact@kdeltamangalasynth.com</a>
+                    </div>
+                </div>
+                
+                 <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 flex items-start gap-4">
+                    <div class="bg-cyan-500/10 p-2 rounded-lg"><i data-lucide="map-pin" class="text-cyan-400 w-5 h-5"></i></div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-bold">Address</span>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            Lal Park Society, Street No 3, Bolbala Marg, Rajkot 360002, Gujarat, India
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Custom Contact Modal for Anand -->
+    <div id="contact-modal-anand"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-md"
+        onclick="if(event.target === this) closeModal('contact-modal-anand')">
+        <div class="bg-slate-900 border border-green-500/30 rounded-2xl shadow-[0_0_50px_rgba(34,197,94,0.15)] w-full max-w-md p-8 text-white relative">
+            <button onclick="closeModal('contact-modal-anand')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            
+            <div class="text-center mb-6">
+                 <div class="w-20 h-20 mx-auto rounded-full overflow-hidden border-2 border-green-500 shadow-lg mb-4">
+                    <img src="https://images.unsplash.com/photo-1595435934249-fd96316cd29a?q=80&w=1974&auto=format&fit=crop" class="w-full h-full object-cover">
+                 </div>
+                 <h3 class="text-2xl font-bold font-display text-white">Anandkumar Ajudiya</h3>
+                 <p class="text-green-400 text-sm font-bold uppercase tracking-wide">Agronomist & Partner</p>
+                 <p class="text-slate-500 text-xs mt-1">Array Aus Pty Ltd</p>
+            </div>
+            
+            <div class="space-y-4">
+                <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 flex items-start gap-4">
+                    <div class="bg-green-500/10 p-2 rounded-lg"><i data-lucide="mail" class="text-green-400 w-5 h-5"></i></div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-bold">Email</span>
+                        <a href="mailto:contact@kdeltamangalasynth.com" class="text-white hover:text-green-400 break-all">contact@kdeltamangalasynth.com</a>
+                    </div>
+                </div>
+                
+                 <div class="p-4 bg-slate-800/50 rounded-xl border border-slate-700 flex items-start gap-4">
+                    <div class="bg-green-500/10 p-2 rounded-lg"><i data-lucide="map-pin" class="text-green-400 w-5 h-5"></i></div>
+                    <div>
+                        <span class="block text-xs text-slate-400 uppercase font-bold">Address</span>
+                        <p class="text-sm text-slate-300 leading-relaxed">
+                            4521 Kennedy Highway, Mareeba QLD 4880, Australia
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div id="privacy-modal"
-        class="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-sm"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-md"
         onclick="if(event.target === this) closeModal('privacy-modal')">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-8">
-            <h3 class="text-2xl font-bold mb-4">Privacy Policy</h3>
-            <p class="text-slate-600">We respect data confidentiality...</p>
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl w-full max-w-2xl p-8 text-white relative">
+            <button onclick="closeModal('privacy-modal')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <h3 class="text-2xl font-bold mb-4 font-display text-cyan-400">Privacy Policy</h3>
+            <p class="text-slate-400">We respect data confidentiality and adhere to strict security protocols...</p>
         </div>
     </div>
 
     <div id="terms-modal"
-        class="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-sm"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-md"
         onclick="if(event.target === this) closeModal('terms-modal')">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-8">
-            <h3 class="text-2xl font-bold mb-4">Terms</h3>
-            <p class="text-slate-600">Services are provided as independent contractors...</p>
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl w-full max-w-2xl p-8 text-white relative">
+             <button onclick="closeModal('terms-modal')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <h3 class="text-2xl font-bold mb-4 font-display text-cyan-400">Terms</h3>
+            <p class="text-slate-400">Services are provided as independent contractors...</p>
         </div>
     </div>
 
     <div id="refund-modal"
-        class="fixed inset-0 z-[100] bg-black/60 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-sm"
+        class="fixed inset-0 z-[100] bg-black/80 flex items-center justify-center p-4 legal-modal hidden-modal backdrop-blur-md"
         onclick="if(event.target === this) closeModal('refund-modal')">
-        <div class="bg-white rounded-2xl shadow-2xl w-full max-w-2xl p-8">
-            <h3 class="text-2xl font-bold mb-4">Refund Policy</h3>
-            <p class="text-slate-600">Milestones are final upon approval...</p>
+        <div class="bg-slate-900 border border-slate-700 rounded-2xl shadow-2xl w-full max-w-2xl p-8 text-white relative">
+             <button onclick="closeModal('refund-modal')" class="absolute top-4 right-4 text-slate-500 hover:text-white"><i data-lucide="x" class="w-6 h-6"></i></button>
+            <h3 class="text-2xl font-bold mb-4 font-display text-cyan-400">Refund Policy</h3>
+            <p class="text-slate-400">Milestones are final upon approval...</p>
         </div>
     </div>
 
